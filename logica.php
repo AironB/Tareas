@@ -7,17 +7,41 @@
     echo var_dump(array_reverse($numeros));
     echo "<br/>";
     
+    // $numerosPares = [1, 2, 3, 4];
+    // $suma = 0;
+    // for ($i=0;$i<=array_count_values($numerosPares);$i++)
+    // {
+    //     if( $numerosPares[$i]  % 2==0)
+    //         {
+    //         $suma += $numerosPares;
+    //         }
+    //     else{
+    //         $i++;
+    //     }
+    // }
+    // echo "Suma: $suma<br>";
 
-    $arr_num = [1,2,3,4,5,6];
-   
-
-print_r( $arr_num);
-
-    $arr_cadena = ["Hello","Developer"];
-    print_r(array_shift($arr_cadena));
-    echo "<br />";
-    $pisos=5;
+    $texto = "<br/>Programar";
+    echo "Contando letras de: $texto<br/>";
+    $letras = "abcdefghijklmnopqrstuvwxyz";
+    $letras .= strtoupper($letras);
+    for ($i = 0; $i < strlen($letras); $i++) {
+        $letra = $letras[$i];
+        $contador = 0;
+        for ($x = 0; $x < strlen($texto); $x++) {
+            $actual = $texto[$x];
+            if ($actual === $letra) {
+                $contador++;
+            }
     
+        }
+        if ($contador > 0) {
+            echo "$letra=";
+            echo $contador;
+            echo "<br/>";
+        }
+    }
+
     $altura = 6;
     $max_asteriscos = 2 * $altura -1;
     for($i=1; $i<=$altura;$i++)
