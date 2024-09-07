@@ -10,12 +10,24 @@ class CuentaBancaria {
     //atributos
     protected $nombre;
     protected $cuenta;
-    private $password;
+    private $pin;
     private $saldo;
+    private $logTransact;
 
-    public function __construct()
+    public function __construct($nombre, $cuenta, $saldoInicial)
     {
-        $this->saldo=0;
+        $this->nombre=$nombre;
+        $this->cuenta =$cuenta;
+        $this->saldo=$saldoInicial;
+        $this->pin="0000";
+    }
+    public function cambiarPin($pin, $newPin)
+    {
+        if($pin === $this->pin){
+            $this->pin=$newPin;
+            return true;
+        }
+        return false;
     }
     public function getSaldo()
     {
@@ -36,12 +48,25 @@ class CuentaBancaria {
             return false;
         }
     }
-    public retirar($password, $monto)
+    public function retirar($pass, $monto)
     {
-        if($password===$this->password && $this=>  $monto)
+        if($pass===$this->pin && $this->saldo>=  $monto)
         {
-            $this=>saldo -= $monto;
+            $this->saldo -= $monto;
+            return true;
         }return false;
     }
 }
+
+$cuentaAiron = new CuentaBancaria("Airon Bautista", "01020304", 10);
+//cambie la contraseña por una propia
+$response=$cuentaAiron->cambiarPin("0000", "45678");
+if($response)echo "Contraseña cambiada\n";
+else echo "Error\n";
+
+$cuentaAiron->depositar("04118131-0", 10);
+echo $cuentaAiron->getSaldo(). "\n";
+
+$cuentaAiron->retirar("0000", 15);
+echo $cuentaAiron->getSaldo(). "\n";
 ?>
