@@ -4,34 +4,19 @@ class Libros{
     public $titulo;
     public $autor;
     public $editorial;
-    //Otros atributos comunes
-    public $cantidad;
     private $cantidad_disponible;
-
     
-
-    function __construct($titulo, $autor, $editorial, $cantidad)
+public function __construct($titulo, $autor, $editorial)
     {
-        $this->titulo = $titulo;
-        $this->autor = $autor;
-        $this->editorial = $editorial;
-        $this->cantidad = $cantidad;
+        $this-> titulo = $titulo;
+        $this-> autor = $autor;
+        $this-> editorial = $editorial;  
     }
-
-    function printLibro()
-    {
-        return "<br>Titulo: $this->titulo -<br> autor : $this->autor -<br> editorial: $this->editorial -<br>Cantidad: $this->cantidad \n";
+    public function setCantidad($cantidad_disponible){
+        $this -> cantidad_disponible = $cantidad_disponible;
+    }
+    public function getCantidad(){
+        return $this-> cantidad_disponible;
     }
 }
-
-$autoayuda = new Libros("Como ganar amigos e influir sobre las personas", "Napoleon Hill", "Mcgrawhill", 2);
-$Finanzas = new Libros("Finanzas personales", "Crouser", "2025", 1);
-
-echo $autoayuda->printLibro();
-echo $Finanzas->printLibro();
-
-class Biblioteca{
-    
-}
-
 ?>

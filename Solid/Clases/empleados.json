@@ -7,5 +7,14 @@
         "cargo": "Gerente",
         "sueldo": 700,
         "password": "Carlos"
+    },
+    {
+        "codigo_empleado": "CF001",
+        "nombre": "Carlos Flores",
+        "telefono": 70088523,
+        "correo": "Carlos@gmail.com",
+        "cargo": "Gerente",
+        "sueldo": 700,
+        "password": "Carlos"
     }
 ]
