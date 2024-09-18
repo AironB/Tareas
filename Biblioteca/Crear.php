@@ -3,14 +3,14 @@ require_once "./index.php";
 
 class Administrar extends Libros{
     public function agregarLibros(){
-        $array_libros = $this->cargarListaLibros();
+        $array_libros = $this -> cargarListaLibros();
         $array_libros[]=[
             'titulo'=>$this->titulo,
             'autor'=>$this->autor,
             'editorial'=>$this->editorial,
             'cantidad_disponible'=>$this->getCantidad()
         ];
-        $this->guardarLibrosJson($array_libros);
+        $this->guardarLibrosJSON($array_libros);
     }
     public function cargarLitaLibros(){
         if (file_exists('./listaLibros.json')){
