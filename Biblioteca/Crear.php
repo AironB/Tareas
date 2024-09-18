@@ -2,8 +2,12 @@
 require_once "./index.php";
 
 class Administrar extends Libros{
+    //agregamos lista de libros
     public function agregarLibros(){
+        //cargamos la lista de libros
+        //y actualizamos
         $array_libros = $this -> cargarListaLibros();
+        
         $array_libros[]=[
             'titulo'=>$this->titulo,
             'autor'=>$this->autor,
@@ -12,9 +16,9 @@ class Administrar extends Libros{
         ];
         $this->guardarLibrosJSON($array_libros);
     }
-    public function cargarLitaLibros(){
+    public function cargarListaLibros(){
         if (file_exists('./listaLibros.json')){
-            $informacion_json = file_get_contents('./listaLibros.php');
+            $informacion_json = file_get_contents('./listaLibros.json');
             return json_decode($informacion_json, true);
         }
         return [];
