@@ -1,22 +1,14 @@
-<?php
-class Libros{
-    //Atributos
-    public $titulo;
-    public $autor;
-    public $editorial;
-    private $cantidad_disponible;
-    
-public function __construct($titulo, $autor, $editorial)
-    {
-        $this-> titulo = $titulo;
-        $this-> autor = $autor;
-        $this-> editorial = $editorial;  
-    }
-    public function setCantidad($cantidad_disponible){
-        $this -> cantidad_disponible = $cantidad_disponible;
-    }
-    public function getCantidad(){
-        return $this-> cantidad_disponible;
-    }
-}
-?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <?php
+    require_once "./libros.php";
+    //Libros::buscarLibro("McGrawhill");
+    ?>
+</body>
+</html>

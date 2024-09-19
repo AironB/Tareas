@@ -3,7 +3,7 @@ class Empleados{
     public $codigo_empleado;
     public $nombre;
     public $telefono;
-    private $correo;
+    private $correo; //set y get
     public $cargo;
     private $sueldo;
     private $password;
